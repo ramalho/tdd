@@ -4,8 +4,7 @@ class Dollar(object):
         self.amount = amount
 
     def times(self, multiplier):
-        self.amount *= multiplier
+        return Dollar(self.amount * multiplier)
 
     def __imul__(self, multiplier):
-        self.times(multiplier)
-        return self
+        return self.times(multiplier)
