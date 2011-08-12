@@ -3,21 +3,21 @@ from multimoney import Dollar
 def test_multiplication():
     five = Dollar(5)
     product = five.times(2)
-    assert 10 == product.amount
+    assert Dollar(10) == product
     product = five.times(3)
-    assert 15 == product.amount
+    assert Dollar(15) == product
 
 def test_multiplication_operator():
     seven = Dollar(7)
     product = seven * 3
-    assert 21 == product.amount
+    assert Dollar(21) == product
     product = 4 * seven
-    assert 28 == product.amount
+    assert Dollar(28) == product
 
 def test_multiplication_assignment():
     value = Dollar(7)
     value *= 3
-    assert 21 == value.amount
+    assert Dollar(21) == value
 
 def test_equality():
     assert Dollar(5).equals(Dollar(5))

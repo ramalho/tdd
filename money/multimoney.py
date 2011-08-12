@@ -1,7 +1,11 @@
 class Dollar(object):
     '''represents Uncle Sam's currency'''
     def __init__(self, amount):
-        self.amount = amount
+        self.__amount = amount
+
+    @property
+    def amount(self):
+        return self.__amount
 
     def times(self, multiplier):
         return Dollar(self.amount * multiplier)
