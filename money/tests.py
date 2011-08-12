@@ -1,4 +1,4 @@
-from multimoney import Dollar
+from multimoney import Dollar, Franc
 
 def test_multiplication():
     five = Dollar(5)
@@ -26,4 +26,11 @@ def test_equality():
 def test_equality_operators():
     assert Dollar(5) == Dollar(5)
     assert Dollar(5) != Dollar(6)
+
+def test_franc_multiplication():
+    five = Franc(5)
+    product = five.times(2)
+    assert Franc(10) == product
+    product = five.times(3)
+    assert Franc(15) == product
 
