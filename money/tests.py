@@ -7,17 +7,14 @@ def test_multiplication():
     product = five.times(3)
     assert 15 == product.amount
 
+def test_multiplication_operator():
+    seven = Dollar(7)
+    product = seven * 3
+    assert 21 == product.amount
+    product = 4 * seven
+    assert 28 == product.amount
+
 def test_multiplication_assignment():
     value = Dollar(7)
     value *= 3
     assert 21 == value.amount
-
-'''
-public void testMultiplication() {
-   Dollar five= new Dollar(5);
-   Dollar product= five.times(2);
-   assertEquals(10, product.amount);
-   product= five.times(3);
-   assertEquals(15, product.amount);
-}
-'''

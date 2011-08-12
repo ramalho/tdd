@@ -6,5 +6,7 @@ class Dollar(object):
     def times(self, multiplier):
         return Dollar(self.amount * multiplier)
 
-    def __imul__(self, multiplier):
+    def __mul__(self, multiplier):
         return self.times(multiplier)
+
+    __rmul__ = __mul__
