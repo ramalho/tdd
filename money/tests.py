@@ -7,7 +7,7 @@ def test_multiplication():
     product = five.times(3)
     assert 15 == product.amount
 
-def test_inplace_multiplication():
+def test_multiplication_assignment():
     seven = Dollar(7)
     seven *= 3
     assert 21 == seven.amount
