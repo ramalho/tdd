@@ -8,12 +8,12 @@ class Money(object):
         return self.__amount
 
     def equals(self, other):
-        return self.amount == other.amount
+        return (type(self) is type(other)) and (self.amount == other.amount)
 
     __eq__ = equals
 
     def __ne__(self, other):
-        return self.amount != other.amount
+        return not (self == other)
 
     def __mul__(self, multiplier):
         return self.times(multiplier)
