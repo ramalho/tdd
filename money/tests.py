@@ -26,6 +26,8 @@ def test_equality():
 def test_equality_operators():
     assert Dollar(5) == Dollar(5)
     assert Dollar(5) != Dollar(6)
+    assert Franc(5) == Franc(5)
+    assert Franc(5) != Franc(6)
 
 def test_franc_multiplication():
     five = Franc(5)
