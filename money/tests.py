@@ -8,9 +8,9 @@ def test_multiplication():
     assert 15 == product.amount
 
 def test_multiplication_assignment():
-    seven = Dollar(7)
-    seven *= 3
-    assert 21 == seven.amount
+    value = Dollar(7)
+    value *= 3
+    assert 21 == value.amount
 
 '''
 public void testMultiplication() {
