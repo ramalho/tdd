@@ -10,3 +10,11 @@ class Dollar(object):
         return self.times(multiplier)
 
     __rmul__ = __mul__
+
+    def equals(self, other):
+        return self.amount == other.amount
+
+    __eq__ = equals
+
+    def __ne__(self, other):
+        return self.amount != other.amount

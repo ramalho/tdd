@@ -18,3 +18,12 @@ def test_multiplication_assignment():
     value = Dollar(7)
     value *= 3
     assert 21 == value.amount
+
+def test_equality():
+    assert Dollar(5).equals(Dollar(5))
+    assert not Dollar(5).equals(Dollar(6))
+
+def test_equality_operators():
+    assert Dollar(5) == Dollar(5)
+    assert Dollar(5) != Dollar(6)
+
