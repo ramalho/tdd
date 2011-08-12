@@ -20,14 +20,11 @@ class Money(object):
 
     __rmul__ = __mul__
 
+    def times(self, multiplier):
+        return type(self)(self.amount * multiplier)
+
 class Dollar(Money):
     '''represents Uncle Sam's currency'''
 
-    def times(self, multiplier):
-        return Dollar(self.amount * multiplier)
-
 class Franc(Money):
     '''represents the currency of the Gnomes of Switzerland'''
-
-    def times(self, multiplier):
-        return Franc(self.amount * multiplier)
