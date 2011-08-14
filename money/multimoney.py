@@ -7,27 +7,24 @@ class Money(object):
     def amount(self):
         return self.__amount
 
-    def equals(self, other):
-        return (type(self) is type(other)) and (self.amount == other.amount)
+    def __rmul__(self, multiplier):
+        return self * multiplier
 
-    __eq__ = equals
+    def __eq__(self, other):
+        return (type(self) is type(other)) and (self.amount == other.amount)
 
     def __ne__(self, other):
         return not (self == other)
 
-    def __mul__(self, multiplier):
-        return self.times(multiplier)
-
-    __rmul__ = __mul__
 
 class Dollar(Money):
     '''represents Uncle Sam's currency'''
 
-    def times(self, multiplier):
+    def __mul__(self, multiplier):
         return Dollar(self.amount * multiplier)
 
 class Franc(Money):
     '''represents the currency of the Gnomes of Switzerland'''
 
-    def times(self, multiplier):
+    def __mul__(self, multiplier):
         return Franc(self.amount * multiplier)
